@@ -86,8 +86,8 @@ function changeCarSpeed(amount) {
 function displayReplayPopup() {
     const popupText = document.getElementById('popupText');
     
-    popupText.innerText = 'Darn it!';
-    removePopup.innerText = 'Click to try again';
+    // popupText.innerText = 'Darn it!';
+    removePopup.innerText = 'Try Again';
     popup.style.display = 'block';
 }
 
@@ -249,7 +249,7 @@ function failGame() {
 function detectCollision(car) {
     const characterPosition = character.getBoundingClientRect();
     const carPosition = car.getBoundingClientRect();
-    if (characterPosition.bottom < carPosition.bottom && characterPosition.top > carPosition.top + 36) {
+    if (characterPosition.bottom < carPosition.bottom && characterPosition.top > carPosition.top + carPosition.height/2.9) {
         addScore();
         if (currentScore >= 25 && currentScore <= 50) {
             changeCarSpeed(4);
@@ -294,6 +294,7 @@ document.addEventListener('keydown', (e) => {
     }
 })
 
+// taken from https://stackoverflow.com/questions/2264072/detect-a-finger-swipe-through-javascript-on-the-iphone-and-android
 let touchStartX = 0;
 let touchEndX = 0;
 
