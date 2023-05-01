@@ -283,11 +283,8 @@ function detectCollision(car) {
 // make the cars move forward every 50ms
 function moveCarsForward() {
     for (let i = 0; i < cars.length; i++) {
-        if (window.innerWidth > 414) {
+
             carPositions[i] += 0.35;
-        } else {
-            carPositions[i] += 0.41;
-        }
         cars[i].style.top = carPositions[i] + 'vh';
         detectCollision(cars[i]);
         if (cars[i].getBoundingClientRect().top > window.innerHeight) {
