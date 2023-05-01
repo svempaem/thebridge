@@ -70,7 +70,7 @@ removePopup.addEventListener('click', () => {
     if (window.innerWidth > 414) {
         carsDriving = setInterval(moveCarsForward,5);
     } else {
-        carsDriving = setInterval(moveCarsForward,10);
+        carsDriving = setInterval(moveCarsForward,6);
     }
     carsSpawning = setInterval(spawnCarsRegularly,600);
     // setTimeout(() => {
@@ -259,20 +259,20 @@ function detectCollision(car) {
             if (window.innerWidth > 414) {
                 changeCarSpeed(4);
             } else {
-                changeCarSpeed(8);
+                changeCarSpeed(5.8);
             }
         }
         if (currentScore >= 50 && currentScore <= 75) {
             if (window.innerWidth > 414) {
                 changeCarSpeed(3);
             }
-            changeCarSpeed(6);
+            changeCarSpeed(5.6);
         }
         if (currentScore >= 75) {
             if (window.innerWidth > 414) {
                 changeCarSpeed(2);
             }
-            changeCarSpeed(4);
+            changeCarSpeed(5.4);
         }
     }
     if (characterPosition.top < carPosition.bottom && characterPosition.left > carPosition.left && characterPosition.right < carPosition.right && characterPosition.bottom > carPosition.top) {
@@ -286,7 +286,7 @@ function moveCarsForward() {
         if (window.innerWidth > 414) {
             carPositions[i] += 0.35;
         } else {
-            carPositions[i] += 0.45;
+            carPositions[i] += 0.41;
         }
         cars[i].style.top = carPositions[i] + 'vh';
         detectCollision(cars[i]);
