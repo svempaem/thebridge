@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica,Arial,sans-serif;
+}
+
+/* .main-container {
+    background-color: rgb(163, 163, 163);
+    width: 80vw;
+    height: 80vh;
+    padding: 1vw;
+    contain: content;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.screen-container {
+    background-color: rgb(46, 49, 146);
+    width: 100vw;
+    height: 100vh;
+    contain: content;
+    position: absolute;
+    /* border-radius: 5vw; */
+}
+
+.popup {
+    background-color: aliceblue;
+    width: 30vw;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+    border: 1vw solid grey;
+    contain: content;
+    padding: 2.5vh 2.5vw 2.5vh 2.5vw;
+    border-radius: 3vw;
+}
+.popup > p {
+    color: black;
+    font-size: 1.5vw;
+    text-align: center;
+    margin-top: 5vh;
+}
+.remove-popup {
+    text-align: center;
+    font-size: 1.2vw;
+    font-weight: bold;
+    margin-top: 2vh;
+}
+#popupShade {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    opacity: 40%;
+    z-index: 1;
+    position: absolute;
+    
+}
+
+.bridge {
+    height: 100vh;
+    width: auto;
+
+    /* place in middle of x axis */
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%,0);
+}
+.bridge-pillar {
+    height: 100vh;
+    width: auto;
+    position: absolute;
+}
+
+.car {
+    width: 4vw;
+    height: auto;
+    position: absolute;
+}
+
+.character {
+    contain: layout;
+    position: absolute;
+    bottom: 20vh;
+    width: 2vw;
+    height: auto;
+}
+
+#failCountText {
+    position: absolute;
+    left: 2vmin;
+    font-weight: bold;
+}
+
+#highScoreText {
+    margin-top: 5vmin;
+    font-weight: bold;
+}
+
+#scoreText,#scoreShadow {
+    position: absolute;
+    font-family: Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    font-size: 20vmin;
+    transform: translate(-50%,0);
+}
+#scoreText {
+    color: rgb(38, 136, 69);
+    left: 49.75%;
+    top: 9.75vmin;
+    z-index: 2;
+}
+#scoreShadow {
+    left: 50%;
+    top: 10vmin;
+    z-index: 1;
+}
+
+.car-container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

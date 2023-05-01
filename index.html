@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bridge</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="main-container">
+    <div class="screen-container" id="screenContainer">
+        <div id="popupShade"></div>
+        <div class="popup" id="popup">
+            <img src="glyphs/title.svg"/>
+            <p id="popupText">
+                Try to get past as many cars as possible!
+            </p>
+            <p id="highScoreText">High Score: 0</p>
+            <p class="remove-popup" id="removePopup">Click to continue</p>
+        </div>
+        <p id="failCountText">Fails: 0</p>
+        <p id="scoreText">0</p>
+        <p id="scoreShadow">0</p>
+        <!-- <div class="popup"></div> -->
+
+        <img class="bridge" id="bridge" src="glyphs/bridge.svg"/>
+        <img class="bridge-pillar" id="bridgePillarLeft" src="glyphs/bridgepillarleft.svg"/>
+        <img class="bridge-pillar" id="bridgePillarRight" src="glyphs/bridgepillarright.svg"/>
+        <div class="car-container" id="carContainer"></div>
+
+        <img class="character" id="character" src="glyphs/player.svg">
+        </div>
+    </div>
+</body>
+</html>
