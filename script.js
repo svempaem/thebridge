@@ -67,7 +67,11 @@ removePopup.addEventListener('click', () => {
     removeCars();
     currentLane = 3;
     updateLanePosition();
-    carsDriving = setInterval(moveCarsForward,5);
+    if (window.innerWidth > 414) {
+        carsDriving = setInterval(moveCarsForward,5);
+    } else {
+        carsDriving = setInterval(moveCarsForward,10);
+    }
     carsSpawning = setInterval(spawnCarsRegularly,600);
     // setTimeout(() => {
     //     scoreInterval = setInterval(addScore,620);
@@ -252,13 +256,23 @@ function detectCollision(car) {
     if (characterPosition.bottom < carPosition.bottom && characterPosition.top > carPosition.top + carPosition.height/2.9) {
         addScore();
         if (currentScore >= 25 && currentScore <= 50) {
-            changeCarSpeed(4);
+            if (window.innerWidth > 414) {
+                changeCarSpeed(4);
+            } else {
+                changeCarSpeed(8);
+            }
         }
         if (currentScore >= 50 && currentScore <= 75) {
-            changeCarSpeed(3);
+            if (window.innerWidth > 414) {
+                changeCarSpeed(3);
+            }
+            changeCarSpeed(6);
         }
         if (currentScore >= 75) {
-            changeCarSpeed(2);
+            if (window.innerWidth > 414) {
+                changeCarSpeed(2);
+            }
+            changeCarSpeed(4);
         }
     }
     if (characterPosition.top < carPosition.bottom && characterPosition.left > carPosition.left && characterPosition.right < carPosition.right && characterPosition.bottom > carPosition.top) {
@@ -269,7 +283,11 @@ function detectCollision(car) {
 // make the cars move forward every 50ms
 function moveCarsForward() {
     for (let i = 0; i < cars.length; i++) {
-        carPositions[i] += 0.34;
+        if (window.innerWidth > 414) {
+            carPositions[i] += 0.35;
+        } else {
+            carPositions[i] += 0.45;
+        }
         cars[i].style.top = carPositions[i] + 'vh';
         detectCollision(cars[i]);
         if (cars[i].getBoundingClientRect().top > window.innerHeight) {

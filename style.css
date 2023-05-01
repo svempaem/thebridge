@@ -123,15 +123,15 @@
 
 #scoreText,#scoreShadow {
     position: absolute;
-    font-family: Helvetica,Arial,sans-serif;
+    /* font-family: Helvetica,Arial,sans-serif; */
     font-weight: bold;
     font-size: 20vmin;
     transform: translate(-50%,0);
 }
 #scoreText {
     color: rgb(38, 136, 69);
-    left: 49.75%;
-    top: 9.75vmin;
+    left: 49.5%;
+    top: 9.5vmin;
     z-index: 2;
 }
 #scoreShadow {
@@ -180,7 +180,16 @@
         display: none;
     }
     #scoreText,#scoreShadow {
-        font-size: 35vmin;
+        font-size: 48vmin;
+    }
+    #scoreText {
+        color: white;
+        left: 48%;
+        top: 6vmin;
+    }
+    #scoreShadow {
+        color: rgb(99, 99, 99);
+        top: 8vmin;
     }
     .popup {
         width: 70vw;
