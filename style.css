@@ -132,3 +132,19 @@
     top: 0;
     left: 0;
 }
+#tunnel {
+    position: absolute;
+    height: auto;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+@media screen and (max-width: 414px) {
+    .bridge {
+        width: 90vw;
+    }
+    .bridge-pillar {
+        height: 70vh;
+        margin-top: 15vh;
+    }
+}

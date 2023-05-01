@@ -110,11 +110,12 @@ function resizeCars() {
 }
 
 // align the pillars to be next to the bridge regardless of screen size
-function alignBridgePillars() {
+function alignBridgePillarsAndTunnel() {
     const bridgePosition = bridge.getBoundingClientRect();
-
+    const tunnel = document.getElementById('tunnel');
     bridgePillarLeft.style.right = bridgePosition.right + 'px';
     bridgePillarRight.style.left = bridgePosition.right + 'px';
+    tunnel.style.width = bridgePosition.width + 'px';
 }
 
 // spawn a car
@@ -293,9 +294,31 @@ document.addEventListener('keydown', (e) => {
     }
 })
 
+let touchStartX = 0;
+let touchEndX = 0;
+
+function checkDirection() {
+    if (gameActive) {
+    if (touchEndX < touchStartX) { // left
+        moveToLeftLane();
+    }
+    else if (touchEndX > touchStartX) {
+        moveToRightLane();
+    }
+    }
+}
+
+document.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+})
+document.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    checkDirection();
+})
+
 // on launch
 resizeCharacter();
-alignBridgePillars();
+alignBridgePillarsAndTunnel();
 updateLanePosition();
 updateHighScoreText();
 
